@@ -18,7 +18,7 @@ resource "aws_key_pair" "aws-key" {
 #create and bootstrap the jenkins master server
 resource "aws_instance" "jenkins-master" {
   instance_type = "t2.medium"
-  ami           = data.aws_ssm_parameter.webserver-ami
+  ami           = data.aws_ssm_parameter.webserver-ami.value
   tags = {
     Name = "jenkins_master"
   }
